@@ -20,4 +20,16 @@ public class TestUser {
 //        User user11 = classPathXmlApplicationContext.getBean("user1", User.class);
     }
 
+    @Test
+    void demo2(){
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("bean.xml");
+
+        // 根据id获取bean
+        User user1 = (User)classPathXmlApplicationContext.getBean("user1");
+
+        String name = user1.getName();
+
+        System.out.println(name);
+    }
+
 }
